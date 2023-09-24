@@ -1,0 +1,65 @@
+/* Reset some default styles to make the table more stylish */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    font-family: 'Helvetica Neue', sans-serif; /* Change to your preferred font family */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    background-color: #fff; /* Background color for the table */
+  }
+  
+  th {
+    background-color: #d5d7da; /* Header background color */
+    color: #151313; /* Text color for header cells */
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #5c5959;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Add a hover effect */
+  }
+  
+  
+  td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    color: #333; /* Text color for data cells */
+  }
+  
+  
+  
+  tbody tr:nth-child(odd) {
+    background-color: #f0f0f0;
+  }
+  
+  caption {
+    font-size: 1.5rem; /* Increase font size for caption */
+    margin-bottom: 20px;
+    color: #007BFF; /* Caption text color */
+    background-color: #f0f0f0; /* Background color for caption */
+    padding: 10px; /* Add padding to the caption */
+    border-radius: 5px; /* Rounded corners for caption */
+    text-align: center; /* Center text in the caption */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the caption */
+    transition: background-color 0.3s ease; /* Add a hover effect */
+  }
+  
+  caption:hover {
+    background-color: #d9d9d9; /* Change caption background color on hover */
+  }
+  
+  /* Add background colors for even and odd rows for better readability */
+  tbody tr:nth-child(even) {
+    background-color: #e6e6e6;
+  }
+  
+  /* Make the table responsive */
+  @media (max-width: 768px) {
+    table {
+      font-size: 0.8rem;
+    }
+  }
