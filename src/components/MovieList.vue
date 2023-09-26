@@ -3,6 +3,9 @@
     <table>
       <caption>
         Movies
+        <div>
+          <SearchBox @search="handleSearch" />
+        </div>
       </caption>
       <thead>
         <tr>
@@ -24,11 +27,16 @@
 
 <script>
 import axios from "axios";
+import SearchBox from "@/components/SearchBox.vue";
 export default {
+  components: {
+    SearchBox,
+  },
   data() {
     return {
       movies: [],
       directors: [],
+      searchQuery: "",
     };
   },
   async created() {
@@ -41,16 +49,7 @@ export default {
   },
   computed: {
     moviesDetails() {
-      return this.movies.map((movie) => {
-        const director =
-          this.directors &&
-          this.directors.find((dir) => dir.id == movie.director);
-        return {
-          id: movie.id,
-          movieName: movie.title,
-          directorName: director ? director.name : "Unknown Director",
-        };
-      });
+      return this.showMovies();
     },
   },
   methods: {
@@ -73,6 +72,27 @@ export default {
         .catch((error) => {
           console.error("Error fetching directors:", error);
         });
+    },
+    handleSearch(query) {
+      this.searchQuery = query;
+    },
+    showMovies() {
+      var movies = this.movies.map((movie) => {
+        const director =
+          this.directors &&
+          this.directors.find((dir) => dir.id == movie.director);
+        return {
+          id: movie.id,
+          movieName: movie.title,
+          directorName: director ? director.name : "Unknown Director",
+        };
+      });
+      if (this.searchQuery != "") {
+        movies = movies.filter((movie) =>
+          movie.movieName.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
+      }
+      return movies;
     },
   },
 };

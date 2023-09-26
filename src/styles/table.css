@@ -21,7 +21,7 @@ table {
     font-weight: bold;
     transition: background-color 0.3s ease; /* Add a hover effect */
   }
-  
+
   
   td {
     padding: 1rem;
@@ -30,8 +30,7 @@ table {
     color: #333; /* Text color for data cells */
   }
   
-  
-  
+
   tbody tr:nth-child(odd) {
     background-color: #f0f0f0;
   }
@@ -46,10 +45,6 @@ table {
     text-align: center; /* Center text in the caption */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow to the caption */
     transition: background-color 0.3s ease; /* Add a hover effect */
-  }
-  
-  caption:hover {
-    background-color: #d9d9d9; /* Change caption background color on hover */
   }
   
   /* Add background colors for even and odd rows for better readability */
