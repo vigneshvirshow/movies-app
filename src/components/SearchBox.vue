@@ -28,25 +28,3 @@
     }
   };
   </script>
-  
-  <style scoped>
-  .search-box {
-    margin: 10px;
-  }
-  .search-box input {
-    padding: 5px;
-    width: 200px;
-    margin-right: 5px;
-  }
-  .search-button {
-    padding: 6px 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  .search-button:hover {
-    background-color: #45a049;
-  }
-  </style>
-  
